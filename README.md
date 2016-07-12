@@ -1,3 +1,4 @@
+<img src="http://cdn.makeuseof.com/wp-content/uploads/2015/11/swipesbot.png?b34c28" width=200 height=200 />
 # Weather Bot
 A bot for fetching weather conditions and forecasts using a natural language interface.
 
@@ -9,7 +10,7 @@ Import the model as an Appliction into your LUIS account (http://luis.ai) and as
     set LUIS_MODEL="MODEL_URL"
 
 ### Usage
-Install dependencies using `npm install` and to run the bot from a console window execute "npm run start".
+Install dependencies using `npm install` and to run the bot from a console window execute `npm run start`.
 
 ### BotConnectorBot Usage
 To run the bot using the Bot Framework Emulator open a console window and execute:
