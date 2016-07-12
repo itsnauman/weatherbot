@@ -12,7 +12,6 @@ module.exports = dialog;
  * @param loc Location to get the weather for
  */
 function weatherForecast(loc, cb) {
-
   const query = new YQL('select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="' + loc + '")');
 
   query.exec((err, data) => {
@@ -35,7 +34,6 @@ function forecastForADate(forecastDate, forecasts) {
 /** Prompts to get the current weather conditions */
 dialog.on('GetCurrentWeather', [
   function(session, args, next) {
-
     const location = builder.EntityRecognizer.findEntity(args.entities, 'builtin.geography.city');
 
     if (!location) {
@@ -47,7 +45,6 @@ dialog.on('GetCurrentWeather', [
     }
   },
   function(session, results) {
-
     const loc = results.response;
 
     weatherForecast(loc, (err, data) => {
@@ -60,7 +57,6 @@ dialog.on('GetCurrentWeather', [
 /** Fetch the weather forecast for a city */
 dialog.on('GetForecast', [
   function(session, args, next) {
-
     const location = builder.EntityRecognizer.findEntity(args.entities, 'builtin.geography.city');
     const timeperiod = builder.EntityRecognizer.findEntity(args.entities, 'builtin.datetime.date');
 
@@ -74,19 +70,20 @@ dialog.on('GetForecast', [
     }
   },
   function(session, results) {
-
     const loc = results.location;
 
     weatherForecast(loc, (err, data) => {
       const res = data.results.channel.item.forecast;
 
       if (!results.timeperiod) {
+
         res.forEach((item) => {
           var message = item.day + ': ' + item.text + ' with a high of ' + item.high + ' and a low of ' + item.low;
           session.send(message);
         });
 
       } else {
+
         var forecastdate = moment(results.timeperiod.resolution.date, 'YYYY-MM-DD');
         var forecast = forecastForADate(forecastdate, res);
 
@@ -97,7 +94,6 @@ dialog.on('GetForecast', [
           var msg = "Whoops, forecast not available yet!";
           session.send(msg);
         }
-
       }
     });
   }
