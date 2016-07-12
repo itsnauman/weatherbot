@@ -19,7 +19,7 @@ To run the bot using the Bot Framework Emulator open a console window and execut
     set appSecret=YourAppSecret
     node botConnectorBot.js
 
-Then launch the Bot Framework Emulator, connect to http://localhost:8080/v1/messages, and say "How's the weather in new york?".
+Then launch the Bot Framework Emulator, connect to `http://localhost:8080/v1/messages`, and say "How's the weather in new york?".
 
 To publish the bot to the Bot Connector Service follow the steps outlined in the article below.
 
