@@ -2,6 +2,15 @@
 # Weather Bot
 A bot for fetching weather conditions and forecasts using a natural language interface.
 
+### What can I ask?
+```
+> What's the weather in new york today?
+> How will the weather in boston be tomorrow?
+> How does the weather in Washington look like for tomorrow?
+> Weather forecast for San Francisco after 3 days?
+> Day after tomorrow weather forecast for San Diego
+> How will the weather in New Jersey be three days from today?
+```
 ### Install LUIS Model
 The sample is coded to use a version of the LUIS models deployed to my LUIS account. If you would like to deploy your own copy of the model, I have included it in the models folder.
 
