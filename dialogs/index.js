@@ -1,6 +1,6 @@
 var builder = require('botbuilder');
-var YQL = require('yql');
-var moment = require('moment');
+var YQL     = require('yql');
+var moment  = require('moment');
 
 /** Return a LuisDialog that points at our model and then add intent handlers. */
 var model = process.env.LUIS_MODEL || 'https://api.projectoxford.ai/luis/v1/application?id=d7381b70-4027-4476-b0e7-fa36423ad19b&subscription-key=612de04505c24e20a0652a64f16f48cb';
